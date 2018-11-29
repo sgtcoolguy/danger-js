@@ -66,7 +66,7 @@ export const fileContentsGenerator = (
     owner: repoSlug.split("/")[0],
   }
   try {
-    const response = await api.repos.getContent(opts)
+    const response = await api.repos.getContents(opts)
     if (response && response.data && response.data.type === "file") {
       const buffer = new Buffer(response.data.content, response.data.encoding)
       return buffer.toString()
